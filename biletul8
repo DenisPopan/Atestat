@@ -1,0 +1,23 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n,s=0,i,f;
+    cin>>n;
+    for(i=1;i<=n/2;i++) {
+
+        f=i;
+        s=0;
+        while(s<n) {
+            s+=f;
+            f++;
+        }
+        if(s==n) {
+
+            for(int j=i;j<=f-1;j++) {
+                cout<<j<<" ";
+            }
+            cout<<"\n";
+        }
+    }
+}
