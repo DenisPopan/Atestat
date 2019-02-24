@@ -1,0 +1,19 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+char x[21],y[21];
+int main()
+{
+    int k=0;
+    cin>>x;
+    strcpy(y,x);
+    while(k<=strlen(x)-1) {
+        if(x[k]==x[k-1]) {
+            k++;
+        }
+        strcpy(y+k,x+k+1);
+        cout<<y<<"\n";
+        strcpy(y,x);
+        k++;
+    }
+}
