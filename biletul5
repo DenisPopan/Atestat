@@ -1,0 +1,50 @@
+#include<iostream>
+using namespace std;
+int suma(int x) {
+
+    int s=0;
+    while(x!=0){
+
+        s+=x%10;
+        x/=10;
+    }
+    return s;
+}
+int main()
+{
+    int n,nro;
+    cin>>n;
+    nro=n-suma(n);
+    if(nro+suma(nro)==n) {
+
+        cout<<"DA";
+        return 0;
+        
+    } else {
+
+        if(nro+suma(nro)>n) {
+
+            while((nro+suma(nro))>n) {
+                nro--;
+            }
+            if(nro+suma(nro) == n) {
+
+                cout<<"DA";
+                return 0;
+            }
+
+        } else {
+
+            while((nro+suma(nro))<n) {
+                nro++;
+            }
+            if(nro+suma(nro) == n) {
+
+                cout<<"DA";
+                return 0;
+            }
+        }
+    }
+    cout<<"NU";
+    return 0;
+}
