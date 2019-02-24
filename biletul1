@@ -1,0 +1,59 @@
+#include<iostream>
+using namespace std;
+
+int x[100];
+
+int cmmmc(int a, int b) {
+
+    int aux;
+    if(a>b){
+        aux=a;
+        a=b;
+        b=aux;
+    }
+    aux=b;
+    while(b%a!=0){
+        b+=aux;
+    }
+    return b;
+}
+int euclid(int a, int b)
+{
+    int c,aux;
+    if(a>b){
+        aux=a;
+        a=b;
+        b=aux;
+    }
+    while (b) {
+        c = a % b;
+        a = b;
+        b = c;
+    }
+    return a;
+}
+
+
+int main()
+{
+    int n,f,g,s=0,m=0;
+    cin>>n;
+    cin>>x[1]>>x[2];
+    g=x[2];
+    for(int i=3;i<=2*n;i++){
+
+        cin>>x[i];
+        if(i%2==0){
+
+            f=cmmmc(g,x[i]);
+            g=f;
+        }
+    }
+    for(int i=1;i<=2*n-1;i+=2){
+
+        s+=x[i]*(f/x[i+1]);
+    }
+    m=euclid(s,f);
+    cout<<s/m<<" "<<f/m;
+    return 0;
+}
