@@ -1,0 +1,17 @@
+#include<iomanip>
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main()
+{
+    float a,b,n,k,s=1;
+    float nr;
+    cin>>a>>b>>n;
+    k=n;
+    nr=a/b;
+    while(k!=0){
+        s=s*10;
+        k--;
+    }
+    cout<<setprecision(n)<<floor(nr*s);
+}
